@@ -1,0 +1,153 @@
+body {
+	font-family: arial;
+	font-size: 12px;
+}
+h1,h2,h3,h4,h5,h6{
+	margin:0;
+	padding: 0;
+}
+/* Header */
+.ui-flight-header {
+	margin:12px;
+	padding:0;
+}
+/* End of Header */
+
+
+/* Style of search box */
+.ui-flight-search-left {
+	max-width:24%;
+	min-width: 230px;
+	float: left;
+	margin:6px;
+}
+
+.ui-flight-search-left .search-container {
+	border-bottom:solid #005FB8 1px;
+	border-left:solid #005FB8 1px;
+	border-right:solid #005FB8 1px;
+	clear: both;
+	border-top: solid 4px #005FB8;
+	padding-top: 12px;
+}
+.ui-flight-search-left label{
+	font-weight: bold;
+	font-size: 9pt;
+	margin-left: 5px;
+}
+.ui-flight-search-left input,select{
+	display: block;
+	margin:2px 5px 2px 5px;
+	width:80%;
+}
+.ui-flight-search-left .menu {
+	list-style: none;
+	margin:12px 0 0 0;
+	padding: 0;
+	width:100%;
+	display: inline-block;
+	float: left;
+	height: 28px;
+
+}
+.ui-flight-search-left .menu.ticket-type li {
+	width:70px;
+}
+.ui-flight-search-left .menu li {
+	float:left;
+	margin:0;
+	padding:6px;
+	cursor: pointer;
+	text-align: center;
+}
+
+.ui-flight-search-left .menu li.selected {
+	background: #005FB8;
+	cursor: default;
+	font-weight: bold;
+	color: white;
+
+}
+.ui-flight-search-left .search-btn{
+	margin: 6px;
+}
+
+.button{
+	background-color:#e2e2e2;
+	border: solid 2px #005FB8;
+	
+	font-weight: bold;
+	padding:6px 8px 6px 8px;
+	background-color:#005FB8;
+	color:white;
+}
+.ui-flight-search-left .price-range {
+	margin:20px 8px 20px 10px;
+	width:90%;
+}
+
+
+/* Search results css*/
+.ui-flight-search-results { 
+	display: inline-block;
+	width: 70%;
+}
+.ui-flight-search-results .header{
+
+	margin:6px;
+	position: relative;
+	height: 70px;
+}
+.ui-flight-search-results .header h1{
+	color:#E60000;
+}
+.ui-flight-search-results .header  .search-dates{
+	position: absolute;
+	right:12px;
+	top:12px;
+	font-weight: bold;
+}
+.ui-flight-search-results .content .results-message {
+	color: #106100;
+	margin-left: 12px;
+}
+.ui-flight-search-results .content .results-message.error {
+	color:red;
+}
+
+
+.ui-flight-search-results .search-result-item {
+	display: inline-block;
+	border: solid 1px #e2e2e2;
+	width: 100%;
+	height: 185px;
+	margin-bottom: 13px;
+}
+.ui-flight-search-results .search-result-item >div
+ {
+	float:left;
+	margin:11px;
+	width:29%;
+}
+.ui-flight-search-results .price{
+	margin:11px;
+}
+.ui-flight-search-results .search-result-item .container-up span,
+.ui-flight-search-results .search-result-item .container-down span
+ {
+	display: block;
+}
+.ui-flight-search-results .container-action img{
+	display: block;
+	float: right;
+	border:solid 1px #e2e2e2;
+}
+.ui-flight-search-results .container-action button.book-flight{
+	display: block;
+	width:150px;
+	float: right;
+}
+
+.ui-flight-search-results .search-dates span{
+	display: block;
+}

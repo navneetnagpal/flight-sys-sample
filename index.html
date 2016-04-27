@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flight Serach Engine</title>
+<link rel="stylesheet" href="css/base/main.css"/>
+<link rel="stylesheet" href="css/base/normalize.css"/>
+<link rel="stylesheet" href="css/base/jquery-ui-min.css"/>
+<link rel="stylesheet" href="css/base/custom.css"/>
+<script type="text/javascript" src="js/jquery-1.8.3.js" ></script>
+<script type="text/javascript" src="js/jquery-ui-1.9.2.custom.js" ></script>
+<script type="text/javascript" src="js/modernizer.js" ></script>
+<script type="text/javascript" src="js/underscore.js" ></script>
+<script type="text/javascript" src="js/handlebars.js" ></script>
+<script type="text/javascript" src="js/dd.js" ></script>
+<script type="text/javascript" src="js/dd.request.js" ></script>
+<script type="text/javascript" src="services/flights.js" ></script>
+<script type="text/javascript" src="js/app.js" ></script>
+<script type="text/javascript" src="js/modules/flightSearchResults.js" ></script>
+<script type="text/javascript" src="js/modules/flightSearch.js" ></script>
+<script type="text/javascript" src="js/modules/flightSearchPage.js" ></script>
+<script id="entry-template" type="text/x-handlebars-template">
+{{#list results}}
+  <div class="search-result-item">
+					<h2 class="price"> Rs. {{Price}}/-</h2>
+					<div class="container-up">
+						<span class="flight-no"> {{Code}}</span>
+						<h2 class="route-info"> {{From}} > {{To}} </h2>
+						Depart Time:<h3 class="depart-time"> {{DeptTime}}</h3>
+						Arrival Time:<h3 class="arrival-time">{{ArrTime}} </h3>
+					</div>
+				 <div class="container-down">
+				 </div>
+				<div class="container-action">
+					<img src="images/no-img.png"/>
+						<button class="book-flight button">Book this flight</button>
+			</div>
+	</div>
+{{/list}}
+</script>
+<script id="entry-template-return" type="text/x-handlebars-template">
+{{#list results}}
+  <div class="search-result-item">
+					<h2 class="price"> Rs. {{Price}}/-</h2>
+					<div class="container-up">
+						<span class="flight-no"> {{Code}}</span>
+						<h2 class="route-info"> {{From}} > {{To}} </h2>
+							Depart Time:<h3 class="depart-time"> {{DeptTime}}</h3>
+						Arrival Time:<h3 class="arrival-time">{{ArrTime}} </h3>
+					</div>
+				<div class="container-down">
+						<span class="flight-no"> {{RetCode}}</span>
+						<h2 class="route-info"> {{To}} > {{From}} </h2>
+							Depart Time:<h3 class="depart-time"> {{RetDeptTime}}</h3>
+						Arrival Time:<h3 class="arrival-time">{{RetArrTime}} </h3>
+				</div>
+				<div class="container-action">
+					<img src="images/no-img.png"/>
+						<button class="book-flight button">Book this flight</button>
+			</div>
+	</div>
+{{/list}}
+</script>
+</head>
+
+<body class="search">
+	<div class="ui-flight-header">
+		<h2 class="ui-app-header">Flight Search Engine</h2>
+	</div>
+		<section id="searchLeft" class="ui-flight-search-left" >
+			<ul class="ticket-type menu">
+				<li type="oneway" class="selected"> One way </li>
+				<li type="return">Return </li>
+			</ul>
+			<div class="search-container">
+				<label>From</label>
+				<input class="origin-city" value="DEL" />
+				<label>To</label>
+
+				<input class="dest-city" value="ASR"/>
+				<label>Date</label>
+				<input class="dept-date" />
+				<label for="return-date">Return Date</label>
+				<input class="return-date"/>
+				<label>Passengers</label>
+				<select class="passengers">
+					<option>1</option>
+				</select>
+				<button class="search-btn button">Search</button>
+			</div>
+			<div class="refine-search-container">
+			<ul class="menu">
+				<li type="oneway" class="selected"> Refine your serach</li>
+			 
+			</ul>
+			<div class="search-container">
+				 
+				<label>Price Range<label> <span class="price-range-label">0-20000
+				</span>
+				<div class="price-range">
+				</div>
+			</div>
+			</div>
+		</section>
+		<section id="searchResults" class="ui-flight-search-results" >
+			<div class="header">
+
+				<h1 class="search-title">PNE - DEL - PUN</h1>
+				<div class="search-dates"> 
+					<span class="depart-date"></span>
+					<span class="return-date"></span>
+				</div>
+				<span class="total-results"></span>
+			</div>
+			<div class="content">
+				<span class="results-message"></span>
+				<div class="vport">
+				
+				</div>
+			</div>
+		</section>
+</body>
+
+</html>
